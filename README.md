@@ -40,15 +40,16 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 **PROGRAM**
 ```
-module exp11(out,clk,rstn);
- input clk, rstn;
-output reg [3:0] out; 
-always @ (posedge clk) begin  
-    if (! rstn)  
-      out <= 0;  
-    else  
-      out <= out + 1;  
-  end  
+ module syn_counter(out,clk,rst);
+ input clk,rst;
+ output reg [3:0]out;
+ always @ (posedge clk)
+ begin
+    if(rst)
+     out<=0;
+   else 
+     out <= out+1;
+end
 endmodule
 
 ```
@@ -63,12 +64,13 @@ endmodule
 
 **TIMING DIAGRAM FOR IP COUNTER**
 
-![image](https://github.com/user-attachments/assets/d8bed6af-fc56-4d7e-9e5f-736ea79636fa)
+![image](https://github.com/user-attachments/assets/63a70c29-c7ea-4f02-86d1-573bf6583b9f)
+
 
 
 **TRUTH TABLE**
 
-![image](https://github.com/user-attachments/assets/c1a6df5e-73f9-4709-9922-498cc654ed3c)
+![image](https://github.com/user-attachments/assets/238af534-6a3b-4957-ba0b-3e176902cadf)
 
 
 **RESULTS**
